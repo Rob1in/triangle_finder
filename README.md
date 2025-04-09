@@ -55,8 +55,12 @@ python src/main.py --images /path/to/input/data
 
 
 ### Command Line Options
+#### Required
 
 - `--images`: Directory containing input images to process (required)
+
+
+#### Optional
 - `--patterns`: Directory containing template patterns (default: "patterns")
 - `--threshold`: Matching threshold (0.0 to 1.0) - higher values mean stricter matching (default: 0.65)
 - `--output`: Directory to save result images (defaults to [images_dir]_results)
@@ -72,4 +76,3 @@ When you run the script, it:
    - Files are named `results_[original_filename].png`
    - Each output image shows the original image with bounding boxes around detected triangles
 
-### Example
