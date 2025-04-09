@@ -1,6 +1,8 @@
 # triangle_finder
 
-<img src="img/animation.gif" width="50%" alt="example">
+<p align="center">
+  <img src="img/animation.gif" width="50%" alt="example">
+</p>
 
 
 ## Setup
