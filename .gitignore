@@ -7,3 +7,5 @@
 # Python bytecode cache
 __pycache__/
 
+results/
+inputs/

@@ -29,8 +29,7 @@ parser.add_argument(
 parser.add_argument(
     "--output",
     type=str,
-    default="results",
-    help="Directory to save result images",
+    help="Directory to save result images (defaults to images_dir_results)",
 )
 parser.add_argument(
     "--show", action="store_true", help="Show visualizations for each processed image"
@@ -41,13 +40,22 @@ args = parser.parse_args()
 images_dir = args.images
 threshold = args.threshold
 template_dir = args.patterns
-output_dir = args.output
 show_visualizations = args.show
 
 # Check if the input directory exists
 if not os.path.isdir(images_dir):
     print(f"Error: Input directory '{images_dir}' not found")
     exit(1)
+
+# Set default output directory based on input directory name
+if args.output:
+    output_dir = args.output
+else:
+    # Get the base name of the images directory
+    images_dir_basename = os.path.basename(os.path.normpath(images_dir))
+    # Create default output directory name
+    output_dir = f"{images_dir_basename}_results"
+    print(f"Using default output directory: {output_dir}")
 
 # Process all images in the input directory
 valid_extensions = [".png", ".jpg", ".jpeg"]
